@@ -178,4 +178,10 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # Mac crap
-.DS _Store
+.DS_Store
+
+# =========================
+# XCode
+# =========================
+
+xcuserdata
