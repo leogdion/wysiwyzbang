@@ -1,0 +1,6 @@
+
+# wysiwyzbang:
+#	gcc ..
+
+# all:
+#	gcc 
