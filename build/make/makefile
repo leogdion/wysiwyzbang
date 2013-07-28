@@ -1,18 +1,6 @@
-ROOT_DIR ?= ../..
-SRCROOT_DIR ?= $(ROOT_DIR)/src
-SRC_DIR ?= $(SRCROOT_DIR)/source
-HEAD_DIR ?= $(SRCROOT_DIR)/headers
-OBJ_DIR ?= $(ROOT_DIR)/obj
-BIN_DIR ?= $(ROOT_DIR)/bin
+VAR_DIR ?= .
 
-CLEAN_PATHS ?= $(OBJ_DIR) $(BIN_DIR)
-RESULT_ITEMS ?= $(BIN_DIR)/wysiwyzbang.a
-
-_OBJ = lib.o
-OBJ = $(addprefix $(OBJ_DIR)/,$(_OBJ))
-
-CC=gcc
-CFLAGS=-I$(HEAD_DIR)
+include $(VAR_DIR)/variables
 
 all: $(RESULT_ITEMS)
 
@@ -28,5 +16,14 @@ $(BIN_DIR):
 clean:
 	rm -rf $(CLEAN_PATHS)
 
-$(BIN_DIR)/wysiwyzbang.a: $(OBJ) $(BIN_DIR)
-	ar rcs $(BIN_DIR)/wysiwyzbang.a $(OBJ)
+$(BIN_DIR)/libwysiwyzbang.a: $(OBJ) $(BIN_DIR)
+	ar rcs $(BIN_DIR)/libwysiwyzbang.a $(OBJ)
+
+$(TB_OBJ_DIR)/%.o: $(TB_SRC_DIR)/%.c $(TB_OBJ_DIR)
+	$(CC) -c -o $@ $< $(CFLAGS) 
+
+$(TB_OBJ_DIR):
+	mkdir -p $@
+
+$(BIN_DIR)/wysiwyzbang-test-bin: $(TB_OBJ) $(TB_BIN_DIR) $(BIN_DIR)/libwysiwyzbang.a
+	$(CC) -o $@ $< -L$(BIN_DIR) -lwysiwyzbang  
