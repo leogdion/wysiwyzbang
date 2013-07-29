@@ -1,0 +1,28 @@
+ROOT_DIR ?= ../..
+SRCROOT_DIR ?= $(ROOT_DIR)/src
+SRC_DIR ?= $(SRCROOT_DIR)/source
+HEAD_DIR ?= $(SRCROOT_DIR)/headers
+OBJ_DIR ?= $(ROOT_DIR)/obj
+BIN_DIR ?= $(ROOT_DIR)/bin
+LIB_DIR ?= $(ROOT_DIR)/lib
+INC_DIR ?= $(ROOT_DIR)/include	
+
+CLEAN_PATHS ?= $(OBJ_DIR) $(BIN_DIR)
+RESULT_ITEMS ?= $(BIN_DIR)/libwysiwyzbang.a $(BIN_DIR)/wysiwyzbang-test-bin
+
+_OBJ = lib.o
+OBJ = $(addprefix $(OBJ_DIR)/,$(_OBJ))
+
+CC=gcc
+CFLAGS=-I$(HEAD_DIR) -I$(INC_DIR)
+
+TB_SRCROOT_DIR ?= $(ROOT_DIR)/tests/bin
+TB_SRC_DIR ?= $(TB_SRCROOT_DIR)
+TB_HEAD_DIR ?= $(TB_SRCROOT_DIR)/src/headers
+TB_OBJ_DIR ?= $(ROOT_DIR)/obj/tb
+TB_BIN_DIR ?= $(ROOT_DIR)/bin
+
+_TB_OBJ = main.o
+TB_OBJ = $(addprefix $(TB_OBJ_DIR)/,$(_TB_OBJ))
+
+TB_CFLAGS=-I$(HEAD_DIR) -I(TB_HEAD_DIR)

@@ -26,4 +26,4 @@ $(TB_OBJ_DIR):
 	mkdir -p $@
 
 $(BIN_DIR)/wysiwyzbang-test-bin: $(TB_OBJ) $(TB_BIN_DIR) $(BIN_DIR)/libwysiwyzbang.a
-	$(CC) -o $@ $< -L$(BIN_DIR) -lwysiwyzbang  
+	$(CC) -o $@ $< -L$(BIN_DIR) -lwysiwyzbang -lncurses 
