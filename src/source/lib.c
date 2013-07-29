@@ -1,5 +1,9 @@
 #include <stdio.h>
+#ifdef WIN32   
+#include <curses.h>
+#else
 #include <ncurses.h>
+#endif
 #include "lib.h"
 
 int hello_world () {
