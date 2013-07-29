@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7B0E1CAA17A2BC9800F29941 /* libwysiwyzbang.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0E1CA917A2BC9800F29941 /* libwysiwyzbang.a */; };
 		7B11FCE117A2C82A00F5482F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B11FCE017A2C82A00F5482F /* main.c */; };
+		7B9396BD17A7029B00838CD0 /* libncurses.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9396BC17A7029B00838CD0 /* libncurses.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		7B0E1C9617A2BC2400F29941 /* wysiwyzbang-bin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "wysiwyzbang-bin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0E1CA917A2BC9800F29941 /* libwysiwyzbang.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwysiwyzbang.a; path = ../wysiwyzbang/build/Debug/libwysiwyzbang.a; sourceTree = "<group>"; };
 		7B11FCE017A2C82A00F5482F /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = ../../tests/bin/main.c; sourceTree = "<group>"; };
+		7B9396BC17A7029B00838CD0 /* libncurses.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libncurses.dylib; path = usr/lib/libncurses.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B9396BD17A7029B00838CD0 /* libncurses.dylib in Frameworks */,
 				7B0E1CAA17A2BC9800F29941 /* libwysiwyzbang.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,6 +47,7 @@
 		7B0E1C8D17A2BC2400F29941 = {
 			isa = PBXGroup;
 			children = (
+				7B9396BC17A7029B00838CD0 /* libncurses.dylib */,
 				7B11FCD517A2BF5900F5482F /* Sources */,
 				7B0E1CA917A2BC9800F29941 /* libwysiwyzbang.a */,
 				7B0E1C9717A2BC2400F29941 /* Products */,

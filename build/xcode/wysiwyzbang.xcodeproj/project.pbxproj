@@ -15,6 +15,7 @@
 		7B0E1C8517A2B9A300F29941 /* libwysiwyzbang.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libwysiwyzbang.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B11FCD917A2C7FA00F5482F /* lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lib.h; sourceTree = "<group>"; };
 		7B11FCDB17A2C7FA00F5482F /* lib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib.c; sourceTree = "<group>"; };
+		7B9396BA17A7028400838CD0 /* libncurses.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libncurses.dylib; path = usr/lib/libncurses.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +32,7 @@
 		7B0E1C7C17A2B9A300F29941 = {
 			isa = PBXGroup;
 			children = (
+				7B9396BA17A7028400838CD0 /* libncurses.dylib */,
 				7B11FCD817A2C7FA00F5482F /* Headers */,
 				7B11FCDA17A2C7FA00F5482F /* Sources */,
 				7B0E1C8617A2B9A300F29941 /* Products */,
