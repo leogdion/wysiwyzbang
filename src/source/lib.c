@@ -13,8 +13,13 @@ int hello_world () {
 	initscr();			/* Start curses mode 		  */
     getmaxyx(stdscr, height, width);
     char * line = (char*)malloc(width * sizeof(char));
-    memset(line, '-', width);
-	printw(line);	/* Print Hello World		  */
+    memset(line, '*', width);
+	//printw(line);	/* Print Hello World		  */
+    printw("\n");
+    printw("\n");
+    printw("\n");
+    printw(line);
+    move(1, 5);
 	refresh();			/* Print it on to the real screen */
 	getch();			/* Wait for user input */
 	endwin();			/* End curses mode		  */
