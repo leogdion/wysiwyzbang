@@ -10,10 +10,10 @@ INC_DIR ?= $(ROOT_DIR)/include
 CLEAN_PATHS ?= $(OBJ_DIR) $(BIN_DIR)
 RESULT_ITEMS ?= $(BIN_DIR)/libwysiwyzbang.a $(BIN_DIR)/wysiwyzbang-test-bin
 
-_OBJ = lib.o
+_OBJ = wwb.o
 OBJ = $(addprefix $(OBJ_DIR)/,$(_OBJ))
 
-CC=gcc
+CC=clang
 CFLAGS=-I$(HEAD_DIR) -I$(INC_DIR)
 
 TB_SRCROOT_DIR ?= $(ROOT_DIR)/tests/bin
