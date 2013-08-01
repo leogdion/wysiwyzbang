@@ -52,6 +52,7 @@ int wwb_main (wwb_configuration * wwb_configuration) {
     int width, height;
     initscr();          /* Start curses mode          */
     getmaxyx(stdscr, height, width);
+    //keypad(stdscr, true);
     char * line = (char*)malloc(width * sizeof(char));
     memset(line, '*', width);
     //printw(line); /* Print Hello World          */
@@ -64,7 +65,14 @@ int wwb_main (wwb_configuration * wwb_configuration) {
     refresh();          /* Print it on to the real screen */
     while (keep_running) {
         current_key = get_key();
-        printw("%d",current_key.special);
+        if (!current_key.special) {
+            //putch(current_key.value);
+            addch(current_key.value);
+            //printw("%d",current_key.special);
+        } else {
+
+        }
+        
     }
     
     endwin();           /* End curses mode        */
