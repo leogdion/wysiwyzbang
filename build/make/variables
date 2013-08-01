@@ -13,7 +13,7 @@ RESULT_ITEMS ?= $(BIN_DIR)/libwysiwyzbang.a $(BIN_DIR)/wysiwyzbang-test-bin
 _OBJ = wwb.o
 OBJ = $(addprefix $(OBJ_DIR)/,$(_OBJ))
 
-CC=clang
+CC=gcc
 CFLAGS=-I$(HEAD_DIR) -I$(INC_DIR)
 
 TB_SRCROOT_DIR ?= $(ROOT_DIR)/tests/bin
