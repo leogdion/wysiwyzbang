@@ -1,6 +1,6 @@
 //int hello_world ();
 
-
+/*
 typedef enum {
 	NONE,
 	UP_ARROW,
@@ -14,6 +14,7 @@ typedef struct _wwb_key
 	special_key special;
 	int value;
 } wwb_key;
+*/
 
 typedef struct _wwb_configuration_builder
 {

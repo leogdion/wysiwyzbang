@@ -23,11 +23,12 @@ void intHandler(int dummy) {
     keep_running = false;
 }
 
+/*
 wwb_key get_key () {
     wwb_key key;
     special_key sp = NONE;
     int ch;
-    ch = getch();            /* Wait for user input */    
+    ch = getch();           
     if (ch == 0x1B) {
         ch = getch();
         if (ch == 0x5B) {
@@ -45,11 +46,14 @@ wwb_key get_key () {
     }
     return key;
 }
+*/
 
 int wwb_main (wwb_configuration * wwb_configuration) {
-    wwb_key current_key;
+    int ch;
+    chtype str [255];
     signal(SIGINT, intHandler);
     int width, height;
+    int x, y;
     initscr();          /* Start curses mode          */
     getmaxyx(stdscr, height, width);
     //keypad(stdscr, true);
@@ -64,14 +68,17 @@ int wwb_main (wwb_configuration * wwb_configuration) {
     move(1, 5);
     refresh();          /* Print it on to the real screen */
     while (keep_running) {
-        current_key = get_key();
-        if (!current_key.special) {
-            //putch(current_key.value);
-            addch(current_key.value);
-            //printw("%d",current_key.special);
-        } else {
 
-        }
+        ch = getch();
+        addch(ch);
+        //addch('\n');
+
+        getyx(stdscr, y, x);
+        mvinchnstr(1,5,str,255);
+        //printw(str);
+        mvaddchstr(5,5,str);
+        //printw(str);
+        move(1,x);
         
     }
     
