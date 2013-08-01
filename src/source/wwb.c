@@ -48,9 +48,18 @@ wwb_key get_key () {
 }
 */
 
+char * str_of_chstr (chtype * chstr) {
+    char * str = (char*) malloc(255 * sizeof(char));
+    for (int index = 0; index < 255 && chstr[index] != 0; index++) {
+        str[index] = (char)(chstr[index]);
+    }
+    return str;
+}
+
 int wwb_main (wwb_configuration * wwb_configuration) {
     int ch;
-    chtype str [255];
+    chtype chstr [255];
+    char * str;
     signal(SIGINT, intHandler);
     int width, height;
     int x, y;
@@ -74,9 +83,10 @@ int wwb_main (wwb_configuration * wwb_configuration) {
         //addch('\n');
 
         getyx(stdscr, y, x);
-        mvinchnstr(1,5,str,255);
-        //printw(str);
-        mvaddchstr(5,5,str);
+        mvinchnstr(1,5,chstr,255);
+        str = str_of_chstr(chstr);
+        mvprintw(6,5,str);
+        mvaddchstr(5,5,chstr);
         //printw(str);
         move(1,x);
         
