@@ -49,8 +49,9 @@ wwb_key get_key () {
 */
 
 char * str_of_chstr (chtype * chstr) {
+    int index;
     char * str = (char*) malloc(255 * sizeof(char));
-    for (int index = 0; index < 255 && chstr[index] != 0; index++) {
+    for (index = 0; index < 255 && chstr[index] != 0; index++) {
         str[index] = (char)(chstr[index]);
     }
     return str;
